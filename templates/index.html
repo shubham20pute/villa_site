@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eternelle Bungalow — Local Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <!-- CHANGED: header updated to center logo and provide right-side controls -->
+  <header class="site-header">
+    <div class="container position-relative d-flex align-items-center justify-content-between py-3">
+      <!-- centered logo (absolute) -->
+      <a href="#" class="brand-center text-dark text-decoration-none" aria-label="Eternelle Bungalow">
+        <span class="brand-text">Eternelle Bungalow</span>
+      </a>
+
+      <!-- left placeholder: keep for spacing and desktop nav -->
+      <div class="d-none d-md-flex align-items-center"></div>
+
+      <!-- right controls: booking button, social icons, hamburger -->
+      <div class="header-controls d-flex align-items-center gap-2">
+        <a class="btn btn-outline-light booking-btn d-none d-md-inline-block" href="#">BOOK YOUR STAY</a>
+
+        <!-- social icons (inline svg) -->
+        <a class="social-btn" href="#" aria-label="Facebook">
+          <!-- facebook svg -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M15 8.5h1.5V6.5H15c-1.1 0-2 .9-2 2v1.5H11v2.25h2v5.5h2.25v-5.5H17l.25-2.25h-1.75V10.5c0-.28.22-.5.5-.5z" fill="#fff"/>
+          </svg>
+        </a>
+        <a class="social-btn" href="#" aria-label="Instagram">
+          <!-- instagram svg -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" stroke="#fff" stroke-width="1.2" fill="none"/>
+            <circle cx="12" cy="12" r="3.2" stroke="#fff" stroke-width="1.2" fill="none"/>
+            <circle cx="17.5" cy="6.5" r="0.6" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- hamburger toggles the offcanvas -->
+        <button id="drawerToggleBtn" class="btn drawer-toggle p-1" type="button" aria-label="Open navigation">
+          <!-- three-line svg for consistent white hamburger -->
+          <svg class="hamburger-icon" width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect y="1" width="26" height="2" rx="1" fill="#fff"/>
+            <rect y="9" width="26" height="2" rx="1" fill="#fff"/>
+            <rect y="17" width="26" height="2" rx="1" fill="#fff"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.ratanvillas.in/website/img/banner-slide1.webp" class="d-block w-100" alt="slide1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.ratanvillas.in/website/img/banner-slide2.webp" class="d-block w-100" alt="slide2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.ratanvillas.in/website/img/banner-slide3.webp" class="d-block w-100" alt="slide3">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.ratanvillas.in/website/img/banner-slide4.webp" class="d-block w-100" alt="slide4">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.ratanvillas.in/website/img/banner-slide5.webp" class="d-block w-100" alt="slide5">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.ratanvillas.in/website/img/banner-slide6.webp" class="d-block w-100" alt="slide6">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <main class="container my-5">
+    <section class="text-center mb-5">
+      <h1 class="display-6">BEST RESORT IN SARISKA NATIONAL PARK</h1>
+      <p class="lead">Wake up to an invigorating aroma of pure air and lush greenery at these luxury resorts in Sariska.</p>
+    </section>
+
+    <section id="features" class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://www.ratanvillas.in/website/img/mountain-view.webp" class="card-img-top" alt="mountain">
+          <div class="card-body">
+            <h5 class="card-title">Experience Nature</h5>
+            <p class="card-text">Find inner peace in our Sariska Room, situated in the serene Aravalli Hills.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://www.ratanvillas.in/website/img/place-2.webp" class="card-img-top" alt="place">
+          <div class="card-body">
+            <h5 class="card-title">Nearby Places</h5>
+            <p class="card-text">Explore Bhangarh, Alwar city, trails and forts nearby.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="https://www.ratanvillas.in/website/img/quilla.png" class="card-img-top" alt="pattern">
+          <div class="card-body">
+            <h5 class="card-title">Featured Offers</h5>
+            <p class="card-text">Check out our exclusive offers and packages.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="mb-5">
+      <h3>What Our Beloved Guests Have To Say</h3>
+      <div class="row g-3 mt-3">
+        <div class="col-md-4">
+          <div class="p-3 border rounded">
+            <img src="https://www.ratanvillas.in/website/img/Viraj-Maan.jpeg" alt="testi" class="rounded-circle me-2" width="64">
+            <strong>ABHINAV PURI</strong>
+            <p class="mb-0 small">This Sariska resort Alwar has a great view, Hills on the back and lake view in front.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded">
+            <img src="https://www.ratanvillas.in/website/img/Sudha-sharma.jpeg" alt="testi" class="rounded-circle me-2" width="64">
+            <strong>KRITI SHARMA</strong>
+            <p class="mb-0 small">The rooms were spacious and spotless, with great décor. The food was delicious.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded">
+            <img src="https://www.ratanvillas.in/website/img/neeraj-jaat.png" alt="testi" class="rounded-circle me-2" width="64">
+            <strong>KAPIL YADAV</strong>
+            <p class="mb-0 small">Appreciating the event planner — outstanding job and attention to detail.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blogs" class="mb-5">
+      <h3>Our Blogs</h3>
+      <div class="row g-3 mt-3">
+        <div class="col-md-6">
+          <article class="d-flex gap-3">
+            <img src="https://www.ratanvillas.in/uploads/0321792ea9543c9384d9b46ae41c0e38.png" width="120" alt="blog">
+            <div>
+              <h5>Honeymoon Destinations Of Alwar</h5>
+              <p class="small text-muted">04 July 2025 | By Admin</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6">
+          <article class="d-flex gap-3">
+            <img src="https://www.ratanvillas.in/uploads/984738a3177be1e6e793f142d63fd4df.webp" width="120" alt="blog">
+            <div>
+              <h5>Perfect Pre-Wedding Shoot Ideas To Pose In Alwar</h5>
+              <p class="small text-muted">14 Aug 2024 | By Admin</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Contact</h5>
+          <p>CALL US: +91-1442990671, +91-9649259090</p>
+          <p>VISIT US: 44, Garba Ji road, Silliserh Lake, Alwar, 301001</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <span class="footer-logo">Eternelle Bungalow</span>
+        </div>
+      </div>
+      <div class="text-center mt-3"><small>© 2025 All Rights Reserved By Eternelle Bungalow (local clone)</small></div>
+    </div>
+  </footer>
+
+  <!-- Offcanvas navigation drawer that matches the screenshots -->
+  <div class="offcanvas offcanvas-start custom-drawer" tabindex="-1" id="navDrawer" aria-labelledby="navDrawerLabel" data-bs-backdrop="true" data-bs-scroll="false">
+    <div class="offcanvas-body p-0">
+      <div class="drawer-inner d-flex">
+        <!-- left: large vertical menu -->
+        <div class="drawer-menu p-5 d-flex flex-column justify-content-center">
+          <!-- text logo for drawer (dark on beige) -->
+          <div class="drawer-logo mb-4"><span class="drawer-logo-text">Eternelle Bungalow</span></div>
+          <ul class="list-unstyled mb-4">
+            <li><a href="#" class="drawer-link">THE VILLA'S STORY</a></li>
+            <li><a href="#" class="drawer-link">ROOMS & SUITES</a></li>
+            <li><a href="#" class="drawer-link">DINING</a></li>
+            <li><a href="#" class="drawer-link">WEDDING</a></li>
+            <li><a href="#" class="drawer-link">MICE</a></li>
+            <li><a href="#" class="drawer-link">EXCLUSIVE OFFERS</a></li>
+            <li><a href="#" class="drawer-link">GALLERY</a></li>
+          </ul>
+
+          <div class="drawer-contact small">
+            <a href="#" class="text-decoration-underline">Contact Us</a>
+            <div class="mt-2">+91 9649259090<br>+91 9649269090<br>+91 1442990671</div>
+            <div class="mt-2">reservations.sariska@ratanvillas.in<br>sales.sariska@ratanvillas.in</div>
+          </div>
+
+          <div class="drawer-footer mt-4 small">Privacy &nbsp; Terms and Conditions</div>
+        </div>
+
+        <!-- right: image + close circle -->
+        <div class="drawer-image-wrap position-relative">
+          <!-- remove data-bs-dismiss to avoid data-API conflicts; JS will hide it -->
+          <button id="drawerCloseBtn" type="button" class="btn-close-circle" aria-label="Close">
+            <span class="btn-close-icon">&times;</span>
+          </button>
+          <div class="drawer-image" style="background-image: url('https://www.ratanvillas.in/public/website/img/slider1.jpeg');"></div>
+          <div class="drawer-address p-4 small">44, Garba Ji road, Silliserh Lake, Alwar, 301001</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

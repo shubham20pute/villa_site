@@ -1,0 +1,308 @@
+/* Minimal styles to approximate the original site's look */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+.carousel-item img { max-height: 68vh; object-fit: cover; }
+.card-img-top { height: 180px; object-fit: cover; }
+header nav a { color: #222; }
+footer { background: #111; }
+.lead { color: #444; }
+
+/* Basic font setup */
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Hero carousel: make tall and show overlayed items like screenshot */
+#heroCarousel .carousel-item img {
+  height: 78vh;
+  object-fit: cover;
+}
+
+/* Offcanvas custom drawer */
+.custom-drawer .offcanvas-body {
+  padding: 0;
+}
+.drawer-inner {
+  width: 100%;
+  min-height: 78vh;
+}
+
+/* Changed: make custom offcanvas drawer full width of the window */
+.custom-drawer {
+  /* tell Bootstrap to use full viewport width for this offcanvas */
+  --bs-offcanvas-width: 100% !important;
+  width: 100% !important;
+  max-width: none !important;
+  left: 0;
+  right: 0;
+  z-index: 1060 !important; /* higher than header (1050) */
+}
+
+/* fallback backdrop to cover the entire viewport when Bootstrap is not available */
+.fallback-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1055; /* below the offcanvas (1060) but above header (1050) */
+}
+
+/* optional body class to prevent page scroll in fallback mode */
+body.offcanvas-open {
+  overflow: hidden;
+}
+
+/* ensure the offcanvas body and inner content use full viewport height and allow scrolling */
+.custom-drawer .offcanvas-body {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0; /* keep existing layout */
+}
+.custom-drawer .drawer-inner {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left menu panel */
+.drawer-menu {
+  background: #f3e7d8; /* beige */
+  width: 52%;
+  border-right: 1px solid #e0cdb8;
+  color: #1b1b1b;
+}
+.drawer-logo { height: 42px; }
+
+/* big vertical menu look */
+.drawer-menu .drawer-link {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #0d0d0d;
+  text-decoration: none;
+  margin: 0.75rem 0;
+}
+.drawer-menu .drawer-link:hover { text-decoration: underline; }
+
+/* contact and footer small */
+.drawer-contact, .drawer-footer { color: #333; }
+
+/* Right image panel */
+.drawer-image-wrap {
+  width: 48%;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.drawer-image {
+  width: 86%;
+  height: 62vh;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+  margin-top: 40px;
+  border-left: 6px solid #fff;
+}
+
+/* circular close button in top-right corner of the drawer image area */
+.btn-close-circle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #c48b59;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.btn-close-circle .btn-close-icon {
+  font-size: 28px;
+  color: #a65e2f;
+  line-height: 1;
+}
+
+/* small address text bottom-right */
+.drawer-address {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  color: #666;
+  width: calc(100% - 32px);
+  text-align: left;
+}
+
+/* NEW: site header overlay + centered logo */
+.site-header {
+  background: transparent !important;
+  box-shadow: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+}
+
+/* ensure container is positioned to allow absolute centering */
+.site-header .container { position: relative; }
+
+/* center the brand/logo horizontally */
+.brand-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+}
+.brand-center img { display: block; }
+
+/* header links should appear light on top of hero */
+.header-link { color: rgba(255,255,255,0.95); text-decoration: none; font-weight: 600; }
+
+/* right-side controls */
+.header-controls { margin-left: auto; }
+
+/* booking button: outlined light style */
+.booking-btn {
+  border-color: rgba(255,255,255,0.9);
+  color: #fff;
+  background: transparent;
+  padding: 8px 14px;
+  font-weight: 600;
+}
+.booking-btn:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* social icon buttons: small white icons in subtle teal bg circle */
+.social-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(5,80,72,0.85); /* teal tone */
+  margin-left: 6px;
+  text-decoration: none;
+}
+.social-btn svg { display:block; }
+
+/* hamburger: ensure icon is visible and no default border */
+.drawer-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+}
+.drawer-toggle .hamburger-icon rect { fill: #fff; }
+
+/* brand text in header (white over hero, scales slightly when sticky) */
+.brand-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.6px;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* when header becomes scrolled (dark translucent bg) keep brand visible */
+.site-header.scrolled .brand-text {
+  color: #fff;
+}
+
+/* drawer (left panel) logo text — dark on beige background */
+.drawer-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1b1b1b;
+  letter-spacing: 0.4px;
+}
+
+/* footer small brand */
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ensure header controls are compact on small screens */
+@media (max-width: 767px) {
+  .brand-center { transform: translate(-50%, -50%); top: 50%; }
+  /* hide desktop booking button on narrow view, keep visual parity */
+  .booking-btn.d-none.d-md-inline-block { display: none !important; }
+  /* slightly reduce social button sizes */
+  .social-btn { width: 32px; height: 32px; }
+}
+
+/* push main content down so it's not hidden under absolute header on non-hero pages */
+main.container { padding-top: 68px; }
+
+/* small address text bottom-right */
+.drawer-address {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  color: #666;
+  width: calc(100% - 32px);
+  text-align: left;
+}
+
+/* small responsive tweaks */
+@media (max-width: 576px) {
+  .carousel-item img { max-height: 40vh; }
+  .card-img-top { height: 140px; }
+}
+@media (max-width: 991px) {
+  .drawer-inner { flex-direction: column; }
+  .drawer-menu, .drawer-image-wrap { width: 100%; }
+  .drawer-image { width: 92%; height: 44vh; margin-top: 24px; }
+  .drawer-menu .drawer-link { font-size: 1.5rem; }
+}
+
+/* header transition and scrolled (sticky) styles */
+.site-header {
+  transition: background-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  position: absolute; /* keep overlay over hero initially */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background: transparent;
+}
+
+/* When user scrolls, make header fixed and give semi-opaque gray background */
+.site-header.scrolled {
+  position: fixed;
+  /* simple translucent gray background (no blur/glass effect) */
+  background: rgba(50, 50, 50, 0.78);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+}
+
+/* Slightly reduce vertical padding when scrolled for compact look */
+.site-header.scrolled .container { padding-top: 8px; padding-bottom: 8px; }
+
+/* ensure center logo remains visually appropriate when sticky */
+.brand-center img { transition: transform 220ms ease; }
+.site-header.scrolled .brand-center img { transform: scale(0.95); }
+
+/* keep main content offset so fixed header doesn't cover it */
+main.container {
+  padding-top: 74px; /* leave space for fixed header */
+}
+
